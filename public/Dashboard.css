@@ -1,0 +1,104 @@
+@font-face {
+    font-family: VeniteAdoremus-rgRBA;
+    src: url(VeniteAdoremus-rgRBA.ttf);
+}
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #171a21;
+    font-family: VeniteAdoremus-rgRBA;
+    color: #fff;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    padding: 1em;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #ff2e63;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin-right: 2em;
+}
+
+.nav-links a {
+    color: #05fdd8;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    color: #fff;
+  text-shadow:
+      0 0 7px #89e2fa,
+      0 0 10px #89e2fa,
+      0 0 21px #89e2fa,
+      0 0 42px #120fba,
+      0 0 82px #120fba,
+      0 0 92px #120fba,
+      0 0 102px #120fba,
+      0 0 151px #120fba; 
+}
+
+.welcome-section h1 {
+    font-size: 3em;
+    color: #ff2e63;
+}
+
+.welcome-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Quick Access Section */
+.quick-access {
+    display: flex;
+    justify-content: center;
+    margin: 3em 0;
+}
+
+.card {
+    background-color: #292929;
+    padding: 2em;
+    margin: 0 1em;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #05fdd8;
+    margin-bottom: 1em;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #ff4500;
+    padding: 0.5em 1em;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #1a1a1a;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

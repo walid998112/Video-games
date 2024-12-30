@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <button class="glow-on-hover" onclick="window.location.href='/logout'">Logout</button>
+        </header>
+        
+        <section class="users-section">
+            <h2>Users List</h2>
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="user-list">
+                    <!-- User list will be populated here by JS -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="games-section">
+            <h2>Add a New Game</h2>
+            <form id="game-form" method="POST">
+                <div class="input-group">
+                    <label for="game-name">Game Name</label>
+                    <input type="text" id="game-name" name="gameName" required>
+                </div>
+                <div class="input-group">
+                    <label for="category">Category</label>
+                    <input type="text" id="category" name="category" required>
+                </div>
+                <button type="submit" class="glow-on-hover">Add Game</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Fetch users and populate the table
+        fetch('/admin/users')
+        .then(response => response.json())
+        .then(users => {
+            const userList = document.getElementById('user-list');
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${user.username}</td><td>${user.email}</td>`;
+                userList.appendChild(row);
+            });
+        });
+
+        // Handle form submission for adding games
+        document.getElementById('game-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const gameName = document.getElementById('game-name').value;
+            const category = document.getElementById('category').value;
+
+            fetch('/admin/games', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ gameName, category })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                document.getElementById('game-form').reset();
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        // Example interaction for admin panel
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            alert('Admin Action Triggered');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

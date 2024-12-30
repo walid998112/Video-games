@@ -1,0 +1,43 @@
+/* Games Catalogue Styles */
+#game-catalog {
+    padding: 60px 0;
+    background-color: #121212;
+    text-align: center;
+    color: #d1d1d1;
+}
+
+#game-catalog h2 {
+    font-size: 2.5rem;
+    color: #05fdd8;
+    margin-bottom: 40px;
+}
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.game-item {
+    background-color: #1b1b1b;
+    padding: 20px;
+    width: 30%;
+    border: 2px solid #ff2e63;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.game-item h3 {
+    color: #05fdd8;
+    margin-bottom: 10px;
+}
+
+.game-item p {
+    color: #ff2e63;
+    font-size: 1.2rem;
+}
+
+.game-item:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,203 @@
+@font-face {
+    font-family: VeniteAdoremus-rgRBA;
+    src: url(VeniteAdoremus-rgRBA.ttf);
+}
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: VeniteAdoremus-rgRBA;
+    background-color: #121212; /* Dark background */
+    color: #d1d1d1; /* Light grey text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    
+}
+
+/* Sign-Up Container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative; /* Allows z-index to be applied */
+    z-index: 1; /* Places the container above the video */
+}
+
+.signup-box {
+    background-color: rgba(13, 13, 13, 0.912);; /* Slightly lighter dark background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-box h2 {
+    color: #05fdd8; /* Neon cyan heading */
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.signup-box h2 span {
+    color: #ff2e63; /* Neon magenta for emphasis */
+}
+
+/* Social Signup Buttons */
+.social-signup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.google-btn, .facebook-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.google-btn {
+    background-color: #f44242; /* Google Blue */
+    color: white;
+}
+
+.google-btn:hover {
+    background-color: #a00000; /* Darker blue on hover */
+}
+
+.facebook-btn {
+    background-color: #3b5998; /* Facebook Blue */
+    color: white;
+}
+
+.facebook-btn:hover {
+    background-color: #1f3b75; /* Darker Facebook blue on hover */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #d1d1d1;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    background-color: #222;
+    color: #d1d1d1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-group input:focus {
+    outline: none;
+    border: 2px solid #05fdd8; /* Neon cyan focus */
+}
+
+.signup-btn {
+    background-color: #ff2e63; /* Neon magenta button */
+    color: #121212;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #05fdd8; /* Neon cyan on hover */
+    color: #121212;
+}
+
+.signup-box p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.signup-box a {
+    color: #05fdd8;
+    text-decoration: none;
+}
+
+.signup-box a:hover {
+    color: #ff2e63;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .signup-box {
+        padding: 20px;
+    }
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the background */
+    z-index: -1; /* Sends video to the back */
+}
+#errorMessage {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.592); /* Dark translucent background */
+    color: #ff4d4d;  /* Neon red text */
+    padding: 10px;
+    border: 2px solid #ff4d4d;  /* Neon red border */
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Orbitron', sans-serif;  /* Futuristic gaming font */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(0);
+    animation: fadeIn 0.5s forwards, shake 0.5s ease-in-out 1;
+    box-shadow: 0 0 15px #ff4d4d;  /* Glowing effect */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-10px);
+    }
+    40%, 80% {
+        transform: translateX(10px);
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games List</title>
+    <link rel="stylesheet" href="games-list.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Games Catalogue</div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="games-section">
+            <h1>All Games</h1>
+            <div class="games-grid">
+                <div class="game-card">
+                    <h3>Cyberpunk 2077</h3>
+                </div>
+                <div class="game-card">
+                    <h3>The Witcher 3</h3>
+                </div>
+                <!-- Add more games here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 CyberGaming. All rights reserved.</p>
+    </footer>
+    <script>
+        // Example interaction for games list
+document.addEventListener('DOMContentLoaded', () => {
+    const gameCards = document.querySelectorAll('.game-card');
+    
+    gameCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.backgroundColor = '#ff4500';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.backgroundColor = '#292929';
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
